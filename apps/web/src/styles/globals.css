@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0D1117;
+    --bg-secondary: #161B22;
+    --bg-tertiary: #21262D;
+    --border-primary: #30363D;
+    --text-primary: #C9D1D9;
+    --text-secondary: #8B949E;
+    --accent-blue: #58A6FF;
+    --accent-green: #3FB950;
+    --accent-red: #F85149;
+    --accent-purple: #BB86FC;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+  }
+
+  * {
+    @apply border-border-primary;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-secondary border border-border-primary rounded-xl p-4 
+           transition-all duration-200 hover:border-border-secondary;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-accent-blue/50
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent-blue text-white hover:bg-accent-blue/90
+           active:bg-accent-blue/80;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-text-secondary hover:text-text-primary
+           hover:bg-bg-tertiary;
+  }
+
+  .btn-danger {
+    @apply btn bg-accent-red text-white hover:bg-accent-red/90;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 bg-bg-tertiary border border-border-primary
+           rounded-lg text-text-primary placeholder:text-text-muted
+           focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue/50
+           transition-colors duration-150;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-new {
+    @apply badge bg-accent-green/20 text-accent-green;
+  }
+
+  .badge-beta {
+    @apply badge bg-accent-purple/20 text-accent-purple;
+  }
+
+  .badge-premium {
+    @apply badge bg-accent-orange/20 text-accent-orange;
+  }
+
+  /* Price change colors */
+  .price-up {
+    @apply text-accent-green;
+  }
+
+  .price-down {
+    @apply text-accent-red;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-primary);
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--border-secondary);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-purple;
+  }
+}

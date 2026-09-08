@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-admin-bg text-admin-text;
+}
+
+.card {
+  @apply bg-admin-surface border border-admin-border rounded-xl p-5;
+}

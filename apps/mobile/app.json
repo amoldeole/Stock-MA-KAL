@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Stock MA-KAL",
+    "slug": "stock-ma-kal",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "stockmakal",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D1117"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stockmakal.app",
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Used for voice commands to control the app",
+        "NSMicrophoneUsageDescription": "Used for voice commands"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D1117"
+      },
+      "package": "com.stockmakal.app",
+      "permissions": [
+        "RECORD_AUDIO",
+        "INTERNET"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-speech"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
