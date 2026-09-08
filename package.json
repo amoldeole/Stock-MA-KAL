@@ -1,0 +1,46 @@
+{
+  "name": "stock-ma-kal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stock Market Moving Average & Kalman Filter Analysis Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "server"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:admin": "turbo run dev --filter=admin",
+    "dev:server": "turbo run dev --filter=server",
+    "dev:mobile": "cd apps/mobile && npm start",
+    "build:web": "turbo run build --filter=web",
+    "build:admin": "turbo run build --filter=admin",
+    "build:server": "turbo run build --filter=server",
+    "build:mobile": "cd apps/mobile && npm run build",
+    "deploy:web": "cd apps/web && npm run deploy",
+    "deploy:admin": "cd apps/admin && npm run deploy",
+    "deploy:server": "cd server && npm run deploy",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "db:migrate": "cd server && npm run db:migrate",
+    "db:seed": "cd server && npm run db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.7",
+    "prettier": "^3.2.5",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.5.0"
+}
